@@ -33,6 +33,8 @@ public class ProximityColourer : MonoBehaviour
         if (dist < threshold)
         {
             mesh.material.color = closeColour;
+            Destroy(mesh.gameObject);
+            //mesh.transform.localScale.Scale = 0;
         }
         else
         {
