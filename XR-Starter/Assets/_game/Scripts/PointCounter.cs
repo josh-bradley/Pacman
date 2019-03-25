@@ -6,7 +6,7 @@ public class PointCounter : MonoBehaviour
 {
 
     private int score = 0;
-    
+
     public void Increment()
     {
         score++;
@@ -19,5 +19,5 @@ public class PointCounter : MonoBehaviour
 
 
     }
-    
+
 }
