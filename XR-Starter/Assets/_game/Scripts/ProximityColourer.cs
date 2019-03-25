@@ -10,11 +10,15 @@ public class ProximityColourer : MonoBehaviour
     public MeshRenderer mesh;
     float t = 0;
     public float threshold = 1;
+    private GameObject scoreText;
+
+    private PointCounter scoreScript;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        scoreText = GameObject.FindGameObjectWithTag("scoreText");
+        scoreScript = scoreText.GetComponent<PointCounter>();
     }
 
     // Update is called once per frame
@@ -34,6 +38,7 @@ public class ProximityColourer : MonoBehaviour
         {
             mesh.material.color = closeColour;
             Destroy(mesh.gameObject);
+            scoreScript.Increment();
             //mesh.transform.localScale.Scale = 0;
         }
         else
