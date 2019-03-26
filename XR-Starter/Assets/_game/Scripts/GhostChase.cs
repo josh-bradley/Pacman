@@ -7,16 +7,23 @@ public class GhostChase : MonoBehaviour
     public GameObject body;
     public Material boostColor;
     private MeshRenderer meshRenderer;
+    private bool boostActive = false;
 
     // Start is called before the first frame update
     void Start()
     {
         meshRenderer = body.GetComponent<MeshRenderer>();
-        agent.SetDestination(Camera.main.transform.position);
+    }
+
+    private void Update()
+    {
+        if(!boostActive)
+            agent.SetDestination(Camera.main.transform.position);
     }
 
     public void OnBoost()
     {
+        boostActive = true;
         agent.SetDestination(home);
         meshRenderer.material = boostColor;
     }
