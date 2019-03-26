@@ -14,7 +14,7 @@ public class sinusoidHover : MonoBehaviour
 
     void Start()
     {
-        pos = transform.position;
+        pos = transform.localPosition;
         //DestroyObject(gameObject, 1.0f);
         axis = transform.up;
         offset = Random.value * 2 * Mathf.PI;
@@ -23,6 +23,6 @@ public class sinusoidHover : MonoBehaviour
 
     void Update()
     {
-        transform.position = pos + axis * Mathf.Sin(Time.time * frequency * (2* Mathf.PI) + offset) * magnitude;
+        transform.localPosition = pos + axis * Mathf.Sin(Time.time * frequency * (2* Mathf.PI) + offset) * magnitude;
     }
 }
