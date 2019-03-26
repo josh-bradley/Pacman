@@ -38,6 +38,7 @@ public class ProximityColourer : MonoBehaviour
         {
             mesh.material.color = closeColour;
             Destroy(mesh.gameObject);
+            Debug.Log("Calling increment from ProximityColourer");
             scoreScript.Increment();
             //mesh.transform.localScale.Scale = 0;
         }
