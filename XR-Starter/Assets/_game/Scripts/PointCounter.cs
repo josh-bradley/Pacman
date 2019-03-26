@@ -13,15 +13,15 @@ public class PointCounter : MonoBehaviour
         Debug.Log("Initialising score");
         score = 0;
         GameObject go = GameObject.FindGameObjectWithTag("scoreText");
-        scoreText = go.GetComponent<TMPro.TextMeshPro>();
-        scoreText.text = $"Score = {score}";
+        scoreText = go.GetComponentInParent<Canvas>().GetComponent<TMPro.TextMeshPro>();
+        //scoreText.text = $"Score = {score}";
     }
 
     public void Increment()
     {
         score++;
 
-        scoreText.text = $"Score = {score}";
+        //scoreText.text = $"Score = {score}";
 
         Debug.Log("Score incremented");
 

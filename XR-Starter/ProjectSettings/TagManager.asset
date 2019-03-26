@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - scoreText
+  - Boost
+  - Ghost
   layers:
   - Default
   - TransparentFX
